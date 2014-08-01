@@ -22,6 +22,8 @@
 		8480FCEA198B142000FAD92E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8480FCCE198B141F00FAD92E /* CoreData.framework */; };
 		8480FCF2198B142000FAD92E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8480FCF0198B142000FAD92E /* InfoPlist.strings */; };
 		8480FCF4198B142000FAD92E /* AThousandWordsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FCF3198B142000FAD92E /* AThousandWordsTests.m */; };
+		8480FCFE198B1E5100FAD92E /* Storyboard.iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8480FCFD198B1E5100FAD92E /* Storyboard.iPhone.storyboard */; };
+		8480FD01198B1EF500FAD92E /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD00198B1EF500FAD92E /* AlbumTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		8480FCEF198B142000FAD92E /* AThousandWordsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AThousandWordsTests-Info.plist"; sourceTree = "<group>"; };
 		8480FCF1198B142000FAD92E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8480FCF3198B142000FAD92E /* AThousandWordsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AThousandWordsTests.m; sourceTree = "<group>"; };
+		8480FCFD198B1E5100FAD92E /* Storyboard.iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.iPhone.storyboard; sourceTree = "<group>"; };
+		8480FCFF198B1EF500FAD92E /* AlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewController.h; sourceTree = "<group>"; };
+		8480FD00198B1EF500FAD92E /* AlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +120,9 @@
 		8480FCD0198B141F00FAD92E /* AThousandWords */ = {
 			isa = PBXGroup;
 			children = (
+				8480FCFD198B1E5100FAD92E /* Storyboard.iPhone.storyboard */,
+				8480FCFF198B1EF500FAD92E /* AlbumTableViewController.h */,
+				8480FD00198B1EF500FAD92E /* AlbumTableViewController.m */,
 				8480FCDF198B141F00FAD92E /* Images.xcassets */,
 				8480FCDC198B141F00FAD92E /* AThousandWords.xcdatamodeld */,
 				8480FCD1198B141F00FAD92E /* Supporting Files */,
@@ -229,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8480FCD5198B141F00FAD92E /* InfoPlist.strings in Resources */,
+				8480FCFE198B1E5100FAD92E /* Storyboard.iPhone.storyboard in Resources */,
 				8480FCE0198B141F00FAD92E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8480FCDB198B141F00FAD92E /* AppDelegate.m in Sources */,
+				8480FD01198B1EF500FAD92E /* AlbumTableViewController.m in Sources */,
 				8480FCDE198B141F00FAD92E /* AThousandWords.xcdatamodeld in Sources */,
 				8480FCD7198B141F00FAD92E /* main.m in Sources */,
 			);
