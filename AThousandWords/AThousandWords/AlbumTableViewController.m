@@ -8,7 +8,7 @@
 
 #import "AlbumTableViewController.h"
 
-@interface AlbumTableViewController ()
+@interface AlbumTableViewController () <UIAlertViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *albumsArray;
 
@@ -36,6 +36,29 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+#pragma  mark - UIAlertView
+
+- (IBAction)addItemBarButtonPressed:(id)sender
+{
+    // when add button is pressed, user will be prompted by UIAlertView to enter name of new album being added
+    UIAlertView *newAlbumAlertView = [[UIAlertView alloc] initWithTitle:@"Enter New Album Name" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Add", nil];
+    
+    // newAlbumAlertView is being set to accept text input
+    [newAlbumAlertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [newAlbumAlertView show];
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        // get user input from alertView text field
+        NSString *alertText = [alertView textFieldAtIndex:0].text;
+        NSLog(@"My new album is %@", alertText);
+    }
+}
+
 
 #pragma mark - Lazy Instantiation
 
@@ -53,13 +76,13 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 5;
+    return 0;
 }
 
 /*
