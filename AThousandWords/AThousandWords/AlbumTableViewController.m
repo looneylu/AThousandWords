@@ -7,6 +7,7 @@
 //
 
 #import "AlbumTableViewController.h"
+#import "Album.h"
 
 @interface AlbumTableViewController () <UIAlertViewDelegate>
 
@@ -36,6 +37,16 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+#pragma mark - Lazy Instantiation
+
+- (NSMutableArray *) albumsArray
+{
+    if (!_albumsArray)
+        _albumsArray = [[NSMutableArray alloc] init];
+    
+    return  _albumsArray;
+}
+
 #pragma  mark - UIAlertView
 
 - (IBAction)addItemBarButtonPressed:(id)sender
@@ -59,17 +70,27 @@
     }
 }
 
+#pragma mark - Helper Methods
 
-#pragma mark - Lazy Instantiation
-
-- (NSMutableArray *) albumsArray
+- (Album *) albumWithName:(NSString *) name
 {
-    if (!_albumsArray)
-        _albumsArray = [[NSMutableArray alloc] init];
+    // get the delegate for app
+    id delegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [delegate managedObjectContext];
     
-    return  _albumsArray;
+    // create album object and add persistence
+    Album *album = [NSEntityDescription insertNewObjectForEntityForName:@"Album" inManagedObjectContext:context];
+    album.name = name;
+    album.date = [NSDate date];
+    
+    NSError *error = nil;
+    if (![context save:&error])
+    {
+        // there is an error
+    }
+    
+    return album; 
 }
-
 
 #pragma mark - Table view data source
 
