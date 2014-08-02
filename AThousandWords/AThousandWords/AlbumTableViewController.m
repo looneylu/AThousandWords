@@ -66,7 +66,12 @@
     {
         // get user input from alertView text field
         NSString *alertText = [alertView textFieldAtIndex:0].text;
-        NSLog(@"My new album is %@", alertText);
+        
+        // create new album and add it to albums array
+        [self.albumsArray addObject:[self albumWithName:alertText]];
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:[self.albumsArray count] - 1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView reloadData];
+        
     }
 }
 
@@ -89,7 +94,7 @@
         // there is an error
     }
     
-    return album; 
+    return album;
 }
 
 #pragma mark - Table view data source
@@ -97,25 +102,28 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return [self.albumsArray count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *cellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    Album *selectedAlbum = [self.albumsArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = selectedAlbum.name;
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
