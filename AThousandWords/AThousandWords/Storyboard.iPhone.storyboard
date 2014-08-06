@@ -11,7 +11,7 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9lP-fz-qfV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="VWg-DQ-Ycu">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
@@ -72,7 +72,13 @@
                             <outlet property="delegate" destination="dl9-6p-sDC" id="L11-37-fsz"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="8ov-tJ-Aeu"/>
+                    <navigationItem key="navigationItem" id="8ov-tJ-Aeu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="MFV-Da-IXg">
+                            <connections>
+                                <action selector="cameraButtonPressed:" destination="dl9-6p-sDC" id="1Oj-hr-6Fp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUR-CB-NLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
