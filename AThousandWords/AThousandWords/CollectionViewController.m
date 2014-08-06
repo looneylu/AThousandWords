@@ -9,7 +9,7 @@
 #import "CollectionViewController.h"
 #import "PhotoCollectionViewCell.h"
 
-@interface CollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationBarDelegate>
+@interface CollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
 
