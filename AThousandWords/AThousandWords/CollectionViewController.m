@@ -7,6 +7,7 @@
 //
 
 #import "CollectionViewController.h"
+#import "PhotoCollectionViewCell.h"
 
 @interface CollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -35,9 +36,10 @@
 {
     static NSString *cellIdentifier = @"Cell";
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
     cell.backgroundColor = [UIColor whiteColor];
+    cell.imageView.image = [UIImage imageNamed:@"astronaut.jpg"]; 
     
     return cell;
 }
