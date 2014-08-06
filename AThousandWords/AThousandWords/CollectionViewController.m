@@ -11,6 +11,8 @@
 
 @interface CollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+@property (strong, nonatomic) NSMutableArray *photos; // of UIImages
+
 @end
 
 @implementation CollectionViewController
@@ -28,6 +30,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+#pragma mark - Lazy Instantiation
+
+- (NSMutableArray *) photos
+{
+    if (!_photos)
+        _photos = [[NSMutableArray alloc] init];
+    
+    return _photos;
 }
 
 #pragma mark - IBActions
@@ -53,6 +65,14 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    UIImage *image = info[UIImagePickerControllerEditedImage];
+    
+    if (!image)
+        image = info[UIImagePickerControllerOriginalImage];
+    
+    [self.photos addObject:image];
+    [self.collectionView reloadData];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -68,13 +88,13 @@
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
     cell.backgroundColor = [UIColor whiteColor];
-    cell.imageView.image = [UIImage imageNamed:@"astronaut.jpg"];
+    cell.imageView.image = [self.photos objectAtIndex:indexPath.row];
     return cell;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 5; 
+    return [self.photos count];
 }
 
 #pragma mark - Navigation
