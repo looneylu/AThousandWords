@@ -8,6 +8,7 @@
 
 #import "AlbumTableViewController.h"
 #import "Album.h"
+#import "CoreDataHelper.h"
 
 @interface AlbumTableViewController () <UIAlertViewDelegate>
 
@@ -37,6 +38,24 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Album"];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
+    
+//    id delegate = [[UIApplication sharedApplication] delegate];
+//    NSManagedObjectContext *context = [delegate managedObjectContext];
+    
+    NSError *error = nil;
+    
+    NSArray *fetchedAlbums = [[CoreDataHelper managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+    self.albumsArray = [fetchedAlbums mutableCopy];
+    
+    [self.tableView reloadData];
+}
+
 #pragma mark - Lazy Instantiation
 
 - (NSMutableArray *) albumsArray
@@ -47,7 +66,7 @@
     return  _albumsArray;
 }
 
-#pragma  mark - UIAlertView
+#pragma  mark - IBActions
 
 - (IBAction)addItemBarButtonPressed:(id)sender
 {
@@ -59,6 +78,8 @@
     [newAlbumAlertView show];
     
 }
+
+#pragma mark - Delegate Methods
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -80,8 +101,7 @@
 - (Album *) albumWithName:(NSString *) name
 {
     // get the delegate for app
-    id delegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [delegate managedObjectContext];
+    NSManagedObjectContext *context = [CoreDataHelper managedObjectContext];
     
     // create album object and add persistence
     Album *album = [NSEntityDescription insertNewObjectForEntityForName:@"Album" inManagedObjectContext:context];
@@ -93,7 +113,7 @@
     {
         // there is an error
     }
-    
+
     return album;
 }
 

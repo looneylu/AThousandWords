@@ -25,6 +25,8 @@
 		8480FCFE198B1E5100FAD92E /* Storyboard.iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8480FCFD198B1E5100FAD92E /* Storyboard.iPhone.storyboard */; };
 		8480FD01198B1EF500FAD92E /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD00198B1EF500FAD92E /* AlbumTableViewController.m */; };
 		8480FD04198C7F1100FAD92E /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD03198C7F1100FAD92E /* Album.m */; };
+		8480FD07198DF4A400FAD92E /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD06198DF4A400FAD92E /* CoreDataHelper.m */; };
+		8480FD0A1990772700FAD92E /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD091990772700FAD92E /* CollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,10 @@
 		8480FD00198B1EF500FAD92E /* AlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewController.m; sourceTree = "<group>"; };
 		8480FD02198C7F1100FAD92E /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = SOURCE_ROOT; };
 		8480FD03198C7F1100FAD92E /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = SOURCE_ROOT; };
+		8480FD05198DF4A400FAD92E /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		8480FD06198DF4A400FAD92E /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		8480FD081990772700FAD92E /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		8480FD091990772700FAD92E /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				8480FCFD198B1E5100FAD92E /* Storyboard.iPhone.storyboard */,
+				8480FD081990772700FAD92E /* CollectionViewController.h */,
+				8480FD091990772700FAD92E /* CollectionViewController.m */,
 				8480FCFF198B1EF500FAD92E /* AlbumTableViewController.h */,
 				8480FD00198B1EF500FAD92E /* AlbumTableViewController.m */,
 				8480FCDF198B141F00FAD92E /* Images.xcassets */,
@@ -138,6 +146,8 @@
 			children = (
 				8480FD02198C7F1100FAD92E /* Album.h */,
 				8480FD03198C7F1100FAD92E /* Album.m */,
+				8480FD05198DF4A400FAD92E /* CoreDataHelper.h */,
+				8480FD06198DF4A400FAD92E /* CoreDataHelper.m */,
 				8480FCD9198B141F00FAD92E /* AppDelegate.h */,
 				8480FCDA198B141F00FAD92E /* AppDelegate.m */,
 				8480FCD2198B141F00FAD92E /* AThousandWords-Info.plist */,
@@ -262,6 +272,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8480FD07198DF4A400FAD92E /* CoreDataHelper.m in Sources */,
+				8480FD0A1990772700FAD92E /* CollectionViewController.m in Sources */,
 				8480FCDB198B141F00FAD92E /* AppDelegate.m in Sources */,
 				8480FD01198B1EF500FAD92E /* AlbumTableViewController.m in Sources */,
 				8480FCDE198B141F00FAD92E /* AThousandWords.xcdatamodeld in Sources */,
