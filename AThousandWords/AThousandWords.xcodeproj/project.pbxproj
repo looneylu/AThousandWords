@@ -29,6 +29,9 @@
 		8480FD0A1990772700FAD92E /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD091990772700FAD92E /* CollectionViewController.m */; };
 		8480FD0D1991C0F500FAD92E /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD0C1991C0F500FAD92E /* PhotoCollectionViewCell.m */; };
 		8480FD0F1991C2EB00FAD92E /* astronaut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8480FD0E1991C2EA00FAD92E /* astronaut.jpg */; };
+		8480FD121992366000FAD92E /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD111992366000FAD92E /* Album.m */; };
+		8480FD151992366100FAD92E /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD141992366100FAD92E /* Photo.m */; };
+		8480FD191992375800FAD92E /* PictureDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD181992375800FAD92E /* PictureDataTransformer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,12 @@
 		8480FD0B1991C0F500FAD92E /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		8480FD0C1991C0F500FAD92E /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		8480FD0E1991C2EA00FAD92E /* astronaut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = astronaut.jpg; sourceTree = "<group>"; };
+		8480FD101992366000FAD92E /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		8480FD111992366000FAD92E /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		8480FD131992366100FAD92E /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		8480FD141992366100FAD92E /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		8480FD171992375800FAD92E /* PictureDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureDataTransformer.h; sourceTree = "<group>"; };
+		8480FD181992375800FAD92E /* PictureDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureDataTransformer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +151,7 @@
 				8480FCFF198B1EF500FAD92E /* AlbumTableViewController.h */,
 				8480FD00198B1EF500FAD92E /* AlbumTableViewController.m */,
 				8480FCDF198B141F00FAD92E /* Images.xcassets */,
-				8480FCDC198B141F00FAD92E /* AThousandWords.xcdatamodeld */,
+				8480FD16199236A700FAD92E /* CoreData */,
 				8480FCD1198B141F00FAD92E /* Supporting Files */,
 			);
 			path = AThousandWords;
@@ -182,6 +191,20 @@
 				8480FCF0198B142000FAD92E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8480FD16199236A700FAD92E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8480FCDC198B141F00FAD92E /* AThousandWords.xcdatamodeld */,
+				8480FD171992375800FAD92E /* PictureDataTransformer.h */,
+				8480FD181992375800FAD92E /* PictureDataTransformer.m */,
+				8480FD131992366100FAD92E /* Photo.h */,
+				8480FD141992366100FAD92E /* Photo.m */,
+				8480FD101992366000FAD92E /* Album.h */,
+				8480FD111992366000FAD92E /* Album.m */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +310,10 @@
 				8480FD01198B1EF500FAD92E /* AlbumTableViewController.m in Sources */,
 				8480FCDE198B141F00FAD92E /* AThousandWords.xcdatamodeld in Sources */,
 				8480FD0D1991C0F500FAD92E /* PhotoCollectionViewCell.m in Sources */,
+				8480FD121992366000FAD92E /* Album.m in Sources */,
+				8480FD191992375800FAD92E /* PictureDataTransformer.m in Sources */,
 				8480FD04198C7F1100FAD92E /* Album.m in Sources */,
+				8480FD151992366100FAD92E /* Photo.m in Sources */,
 				8480FCD7198B141F00FAD92E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
