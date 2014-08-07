@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Album.h"
 
 @interface CollectionViewController : UICollectionViewController
+
+@property (strong, nonatomic) Album *album;
 
 @end

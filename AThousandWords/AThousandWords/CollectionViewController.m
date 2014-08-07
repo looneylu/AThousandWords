@@ -8,6 +8,9 @@
 
 #import "CollectionViewController.h"
 #import "PhotoCollectionViewCell.h"
+#import "Photo.h"
+#import "PictureDataTransformer.h"
+#import "CoreDataHelper.h"
 
 @interface CollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -70,7 +73,7 @@
     if (!image)
         image = info[UIImagePickerControllerOriginalImage];
     
-    [self.photos addObject:image];
+    [self.photos addObject:[self photoFromImage:image]];
     [self.collectionView reloadData];
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -87,14 +90,34 @@
     
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
+    Photo *photo = self.photos[indexPath.row];
+    
+    cell.imageView.image = photo.image;
     cell.backgroundColor = [UIColor whiteColor];
-    cell.imageView.image = [self.photos objectAtIndex:indexPath.row];
     return cell;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return [self.photos count];
+}
+
+#pragma mark - Helper Methods
+
+- (Photo *) photoFromImage:(UIImage *)image
+{
+    Photo *photo = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:[CoreDataHelper managedObjectContext]];
+    photo.image = image;
+    photo.date = [NSDate date];
+    photo.albumBook = self.album;
+    
+    NSError *error = nil;
+    if (![[photo managedObjectContext] save:&error])
+    {
+        // error in saving
+    }
+    
+    return photo;
 }
 
 #pragma mark - Navigation
