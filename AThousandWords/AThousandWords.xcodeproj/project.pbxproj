@@ -24,7 +24,6 @@
 		8480FCF4198B142000FAD92E /* AThousandWordsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FCF3198B142000FAD92E /* AThousandWordsTests.m */; };
 		8480FCFE198B1E5100FAD92E /* Storyboard.iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8480FCFD198B1E5100FAD92E /* Storyboard.iPhone.storyboard */; };
 		8480FD01198B1EF500FAD92E /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD00198B1EF500FAD92E /* AlbumTableViewController.m */; };
-		8480FD04198C7F1100FAD92E /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD03198C7F1100FAD92E /* Album.m */; };
 		8480FD07198DF4A400FAD92E /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD06198DF4A400FAD92E /* CoreDataHelper.m */; };
 		8480FD0A1990772700FAD92E /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD091990772700FAD92E /* CollectionViewController.m */; };
 		8480FD0D1991C0F500FAD92E /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD0C1991C0F500FAD92E /* PhotoCollectionViewCell.m */; };
@@ -66,8 +65,6 @@
 		8480FCFD198B1E5100FAD92E /* Storyboard.iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.iPhone.storyboard; sourceTree = "<group>"; };
 		8480FCFF198B1EF500FAD92E /* AlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewController.h; sourceTree = "<group>"; };
 		8480FD00198B1EF500FAD92E /* AlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewController.m; sourceTree = "<group>"; };
-		8480FD02198C7F1100FAD92E /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = SOURCE_ROOT; };
-		8480FD03198C7F1100FAD92E /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = SOURCE_ROOT; };
 		8480FD05198DF4A400FAD92E /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		8480FD06198DF4A400FAD92E /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		8480FD081990772700FAD92E /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
@@ -161,8 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				8480FD0E1991C2EA00FAD92E /* astronaut.jpg */,
-				8480FD02198C7F1100FAD92E /* Album.h */,
-				8480FD03198C7F1100FAD92E /* Album.m */,
 				8480FD05198DF4A400FAD92E /* CoreDataHelper.h */,
 				8480FD06198DF4A400FAD92E /* CoreDataHelper.m */,
 				8480FCD9198B141F00FAD92E /* AppDelegate.h */,
@@ -312,7 +307,6 @@
 				8480FD0D1991C0F500FAD92E /* PhotoCollectionViewCell.m in Sources */,
 				8480FD121992366000FAD92E /* Album.m in Sources */,
 				8480FD191992375800FAD92E /* PictureDataTransformer.m in Sources */,
-				8480FD04198C7F1100FAD92E /* Album.m in Sources */,
 				8480FD151992366100FAD92E /* Photo.m in Sources */,
 				8480FCD7198B141F00FAD92E /* main.m in Sources */,
 			);

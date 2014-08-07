@@ -33,6 +33,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSSet *unordedPhotos = self.album.photos;
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"Date" ascending:YES];
+    NSArray *sortedPhotos = [unordedPhotos sortedArrayUsingDescriptors:@[dateDescriptor]];
+    self.photos = [sortedPhotos mutableCopy];
 }
 
 #pragma mark - Lazy Instantiation
