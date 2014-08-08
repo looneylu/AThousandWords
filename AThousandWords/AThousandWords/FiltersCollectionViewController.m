@@ -97,7 +97,13 @@
     
     cell.backgroundColor = [UIColor whiteColor];
     
-    cell.imageView.image = [self filteredImageFromImage:self.photo.image andFilter:self.filters[indexPath.row]];
+    dispatch_queue_t filterQueue = dispatch_queue_create("filter queue", NULL);
+    dispatch_async(filterQueue, ^{
+        UIImage *filterImage = [self filteredImageFromImage:self.photo.image andFilter:self.filters[indexPath.row]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.imageView.image = filterImage;
+        });
+    });
     
     return cell;
 }
