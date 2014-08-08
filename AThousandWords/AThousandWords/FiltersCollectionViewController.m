@@ -7,8 +7,11 @@
 //
 
 #import "FiltersCollectionViewController.h"
+#import "PhotoCollectionViewCell.h"
 
 @interface FiltersCollectionViewController ()
+
+@property (strong, nonatomic) NSMutableArray *filters;
 
 @end
 
@@ -29,10 +32,32 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
+
+#pragma mark - Lazy Instantiation
+
+-(NSMutableArray *) filters
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (!_filters)
+        _filters = [[NSMutableArray alloc] init];
+    
+    return _filters;
+}
+
+#pragma mark - UICollectionViewDataSource
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"PhotoCell";
+    PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    cell.backgroundColor = [UIColor whiteColor];
+    cell.imageView.image = self.photo.image;
+    
+    return cell;
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [self.filters count];
 }
 
 /*
