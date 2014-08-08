@@ -21,23 +21,18 @@
 
 @implementation CollectionViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
-- (void)viewDidLoad
+-(void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [super viewWillAppear:YES];
+    
     NSSet *unordedPhotos = self.album.photos;
     NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"Date" ascending:YES];
     NSArray *sortedPhotos = [unordedPhotos sortedArrayUsingDescriptors:@[dateDescriptor]];
     self.photos = [sortedPhotos mutableCopy];
+    
+    [self.collectionView reloadData]; 
+    
 }
 
 #pragma mark - Lazy Instantiation
