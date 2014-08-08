@@ -41,9 +41,9 @@
 
 #pragma mark - IBActions
 
-- (IBAction)addFilterButtonPressed:(id)sender
+- (IBAction)addFilterButtonPressed:(UIButton *)sender
 {
-
+    
 }
 
 - (IBAction)deleteButtonPressed:(UIButton *)sender
@@ -72,7 +72,7 @@
         if ([segue.destinationViewController isKindOfClass:[FiltersCollectionViewController class]])
         {
             FiltersCollectionViewController *filtersCollectionVC = segue.destinationViewController;
-            filtersCollectionVC.photo = self.photo; 
+            filtersCollectionVC.photo = self.photo;
         }
     }
 }

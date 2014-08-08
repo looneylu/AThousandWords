@@ -12,6 +12,7 @@
 @interface FiltersCollectionViewController ()
 
 @property (strong, nonatomic) NSMutableArray *filters;
+@property (strong, nonatomic) CIContext *context;
 
 @end
 
@@ -31,7 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.filters = [[[self class] photoFilters] mutableCopy]; 
+    self.filters = [[[self class] photoFilters] mutableCopy];
 }
 
 #pragma mark - Helpers
@@ -54,6 +55,21 @@
     return allFilters;
 }
 
+- (UIImage *)filteredImageFromImage:(UIImage *)image andFilter:(CIFilter *)filter
+{
+    CIImage *unfilteredImage = [[CIImage alloc] initWithCGImage:image.CGImage];
+
+    [filter setValue:unfilteredImage forKey:kCIInputImageKey];
+    CIImage *filteredImage = [filter outputImage];
+    
+    CGRect extent = [filteredImage extent];
+    CGImageRef cgImage = [self.context createCGImage:filteredImage fromRect:extent];
+    
+    UIImage *finalImage = [UIImage imageWithCGImage:cgImage];
+    
+    return finalImage;
+}
+
 #pragma mark - Lazy Instantiation
 
 -(NSMutableArray *) filters
@@ -64,6 +80,14 @@
     return _filters;
 }
 
+- (CIContext *) context
+{
+    if (!_context)
+        _context = [CIContext contextWithOptions:nil];
+    
+    return _context;
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -72,7 +96,8 @@
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
     cell.backgroundColor = [UIColor whiteColor];
-    cell.imageView.image = self.photo.image;
+    
+    cell.imageView.image = [self filteredImageFromImage:self.photo.image andFilter:self.filters[indexPath.row]];
     
     return cell;
 }
