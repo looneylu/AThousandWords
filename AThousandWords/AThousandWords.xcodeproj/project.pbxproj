@@ -32,6 +32,7 @@
 		8480FD151992366100FAD92E /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD141992366100FAD92E /* Photo.m */; };
 		8480FD191992375800FAD92E /* PictureDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD181992375800FAD92E /* PictureDataTransformer.m */; };
 		8480FD1C19945F1D00FAD92E /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD1B19945F1D00FAD92E /* PhotoDetailViewController.m */; };
+		8480FD1F1994730400FAD92E /* FiltersCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480FD1E1994730400FAD92E /* FiltersCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		8480FD181992375800FAD92E /* PictureDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureDataTransformer.m; sourceTree = "<group>"; };
 		8480FD1A19945F1D00FAD92E /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
 		8480FD1B19945F1D00FAD92E /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
+		8480FD1D1994730400FAD92E /* FiltersCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersCollectionViewController.h; sourceTree = "<group>"; };
+		8480FD1E1994730400FAD92E /* FiltersCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				8480FCFD198B1E5100FAD92E /* Storyboard.iPhone.storyboard */,
+				8480FD1D1994730400FAD92E /* FiltersCollectionViewController.h */,
+				8480FD1E1994730400FAD92E /* FiltersCollectionViewController.m */,
 				8480FD1A19945F1D00FAD92E /* PhotoDetailViewController.h */,
 				8480FD1B19945F1D00FAD92E /* PhotoDetailViewController.m */,
 				8480FD0B1991C0F500FAD92E /* PhotoCollectionViewCell.h */,
@@ -308,6 +313,7 @@
 				8480FD1C19945F1D00FAD92E /* PhotoDetailViewController.m in Sources */,
 				8480FD0A1990772700FAD92E /* CollectionViewController.m in Sources */,
 				8480FCDB198B141F00FAD92E /* AppDelegate.m in Sources */,
+				8480FD1F1994730400FAD92E /* FiltersCollectionViewController.m in Sources */,
 				8480FD01198B1EF500FAD92E /* AlbumTableViewController.m in Sources */,
 				8480FCDE198B141F00FAD92E /* AThousandWords.xcdatamodeld in Sources */,
 				8480FD0D1991C0F500FAD92E /* PhotoCollectionViewCell.m in Sources */,

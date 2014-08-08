@@ -7,6 +7,7 @@
 //
 
 #import "PhotoDetailViewController.h"
+#import "FiltersCollectionViewController.h"
 
 
 @interface PhotoDetailViewController ()
@@ -59,7 +60,6 @@
 }
 
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -67,7 +67,15 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"toFilters"])
+    {
+        if ([segue.destinationViewController isKindOfClass:[FiltersCollectionViewController class]])
+        {
+            FiltersCollectionViewController *filtersCollectionVC = segue.destinationViewController;
+            filtersCollectionVC.photo = self.photo; 
+        }
+    }
 }
-*/
+
 
 @end
