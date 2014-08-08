@@ -8,11 +8,9 @@
 
 #import "PhotoDetailViewController.h"
 
-@class  Photo;
 
 @interface PhotoDetailViewController ()
 
-@property (strong, nonatomic) Photo *photo;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
@@ -34,6 +32,14 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    self.imageView.image = self.photo.image;
+}
+
+#pragma mark - IBActions
+
 - (IBAction)addFilterButtonPressed:(id)sender
 {
 
@@ -41,7 +47,8 @@
 
 - (IBAction)deleteButtonPressed:(UIButton *)sender
 {
-
+    [[self.photo managedObjectContext] deleteObject:self.photo];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

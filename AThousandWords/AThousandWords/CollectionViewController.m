@@ -11,6 +11,7 @@
 #import "Photo.h"
 #import "PictureDataTransformer.h"
 #import "CoreDataHelper.h"
+#import "PhotoDetailViewController.h"
 
 @interface CollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -125,13 +126,24 @@
 }
 
 #pragma mark - Navigation
-/*
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"detailSegue"])
+    {
+        if ([segue.destinationViewController isKindOfClass:[PhotoDetailViewController class]])
+        {
+            PhotoDetailViewController *photoDetailVC = segue.destinationViewController;
+            NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] lastObject];
+            
+            Photo *selectedPhoto = [self.photos objectAtIndex:indexPath.row];
+            photoDetailVC.photo = selectedPhoto;
+        }
+    }
 }
-*/
+
 
 @end
